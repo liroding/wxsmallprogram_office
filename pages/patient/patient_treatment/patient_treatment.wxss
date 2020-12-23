@@ -1,0 +1,320 @@
+/* pages/wxml/index.wxss */
+@import '/lib/weui.wxss';
+
+.summary {
+  background: #0097ff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+page {
+  background: rgb(201, 195, 195);
+}
+
+
+
+/*头像*/
+.summary .avatar {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+}
+
+/*昵称*/
+.summary .nickname {
+  color: white;
+  font-size: 22px;
+}
+
+/*.个人信息*/
+
+/*账户信息*/
+.account {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+  background: white;
+}
+
+/*每一项*/
+.account .item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 0;
+  flex: 1;
+  border-right: 1px solid #eee;
+}
+
+.account .item:last-child {
+  border-right: 0;
+}
+
+/*数值*/
+.account .item .value {
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+/*after通用样式*/
+.account .item .value:after {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/*余额*/
+.account .item .balance {
+  color: #fd9900;
+}
+
+/*单位*/
+.account .item .balance:after {
+  content: '元';
+}
+
+/*优惠*/
+.account .item .coupon {
+  color: #ff5f3e;
+}
+
+/*单位*/
+.account .item .coupon:after {
+  content: '个';
+}
+
+/*积分*/
+.account .item .credit {
+  color: #6ac20b;
+}
+
+/*单位*/
+.account .item .credit:after {
+  content: '分';
+}
+
+/*标签*/
+.account .item .caption {
+  margin-top: -10px;
+  color: #666;
+  font-size: 14px;
+}
+/*.账户信息*/
+
+/*通用列表*/
+.listview {
+  margin-top: 10px;
+}
+
+/*列表项*/
+.listview .item {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  margin-left: 0;
+  height: 50px;
+}
+
+/*箭头*/
+.listview .item:after {
+  content: " ";
+  height: 8px;
+  width: 8px;
+  border-width: 2px 2px 0 0;
+  border-color: #ccc;
+  border-style: solid;
+  transform:rotate(45deg);
+  position: absolute;
+  margin-top: -4px;
+  top: 50%;
+  right: 22px;
+}
+
+.listview .item .hd {
+  width: 25px;
+  height: 25px;
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+.listview .item .bd {
+  font-size: 16px;
+  margin-left: 10px;
+}
+/*.通用列表*/
+
+/*退出登录*/
+.logout {
+  background: white;
+  padding: 2px 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #f23030;
+  text-align: center;
+  font-size: 18px;
+  line-height: 220%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.show-btn {
+ 
+  margin-top: 100rpx;
+   
+  color: #22cc22;
+   
+  }
+   
+  .modal-mask {
+   
+  width: 100%;
+   
+  height: 100%;
+   
+  position: fixed;
+   
+  top: 0;
+   
+  left: 0;
+   
+  background: #000;
+   
+  opacity: 0.5;
+   
+  overflow: hidden;
+   
+  z-index: 9000;
+   
+  color: #fff;
+   
+  }
+   
+  .modal-dialog {
+   
+  width: 540rpx;
+   
+  overflow: hidden;
+   
+  position: fixed;
+   
+  top: 50%;
+   
+  left: 0;
+   
+  z-index: 9999;
+   
+  background: #fff;
+   
+  margin: -180rpx 105rpx;
+   
+  border-radius: 36rpx;
+   
+  }
+   
+  .modal-title {
+   
+  padding-top: 50rpx;
+   
+  font-size: 36rpx;
+   
+  color: #030303;
+   
+  text-align: center;
+   
+  }
+   
+  .modal-content {
+   
+  padding: 50rpx 32rpx;
+   
+  }
+   
+  .modal-input {
+   
+  display: flex;
+   
+  background: #fff;
+   
+  border-bottom: 2rpx solid #ddd;
+   
+  border-radius: 4rpx;
+   
+  font-size: 28rpx;
+   
+  }
+   
+  .input {
+   
+  width: 100%;
+   
+  height: 82rpx;
+   
+  font-size: 28rpx;
+   
+  line-height: 28rpx;
+   
+  padding: 0 20rpx;
+   
+  box-sizing: border-box;
+   
+  color: #333;
+   
+  }
+   
+  input-holder {
+   
+  color: #666;
+   
+  font-size: 28rpx;
+   
+  }
+   
+  .modal-footer {
+   
+  display: flex;
+   
+  flex-direction: row;
+   
+  height: 86rpx;
+   
+  border-top: 1px solid #dedede;
+   
+  font-size: 34rpx;
+   
+  line-height: 86rpx;
+   
+  }
+   
+  .btn-cancel {
+   
+  width: 50%;
+   
+  color: #666;
+   
+  text-align: center;
+   
+  border-right: 1px solid #dedede;
+   
+  }
+   
+  .btn-confirm {
+   
+  width: 50%;
+   
+  color: #ec5300;
+   
+  text-align: center;
+   
+  }

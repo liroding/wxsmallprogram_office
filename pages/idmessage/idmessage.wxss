@@ -1,0 +1,18 @@
+/* pages/idmessage/idmessage.wxss */
+@import '../../lib/weui.wxss';
+.idmessage_context{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  flex-wrap:nowrap;
+  margin-bottom:40px; 
+  background-color: rgba(206, 202, 212, 0.459);
+}
+.section{
+  width: 95%;
+  height:100%;
+  margin:12px;
+  background-color:white;
+}

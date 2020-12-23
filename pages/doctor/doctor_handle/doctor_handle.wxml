@@ -1,0 +1,156 @@
+<!--pages/doctor/doctor.wxml-->
+<text>pages/doctor/doctor.wxml</text>
+
+<view class="page">
+    <view class="page__hd">
+        <view class="page__desc">审核表单</view>
+    </view>
+    <view class="page__bd">
+
+        <view class="weui-form-preview">
+
+            <view class="weui-form-preview__item ">
+                    <view class="weui-form-preview__label">审核操作工作台</view>                   
+            </view>
+            <view class="weui-form-preview__ft ">
+                
+                <navigator url=" " class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap='doctor_preview' id ='search_a'>查看采购(A)</navigator>
+
+                <navigator url=" " class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="showDialogBtn_doctor">审核A</navigator>
+
+                <navigator url=" " class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="showDialogBtn_consultants">审核B</navigator>
+
+                <navigator url=" " class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap='doctor_preview' id = 'search_b'>查看采购(B)</navigator>
+            </view>
+         </view> 
+
+
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">采购者信息</view>                   
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">姓名</view>
+                    <view class="weui-form-preview__value">{{name}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">性别</view>
+                    <view class="weui-form-preview__value">{{sex}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">年龄</view>
+                    <view class="weui-form-preview__value">{{age}}</view>
+                </view>
+
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">所属单位/部门</view>
+                    <view class="weui-form-preview__value">{{department}}</view>
+                </view>
+
+            </view>
+
+        </view>
+        <!-------------------------------------------------------------------->
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">采购明细</view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <!-- Case1 -->
+                    <view wx:for="{{PEA_data}}" wx:key="key">
+                        <view class="casestyle">{{item.value}}</view>
+                        <view wx:if = "{{PEA[index] == 1}}"> 
+                            <view class="weui-form-preview__value">是</view>
+                        </view>
+                        <view wx:else>
+                            <view class="weui-form-preview__value">否</view>
+                        </view>                       
+                    </view>
+                    
+    
+                    <!-- 分割线 -->  
+                    <view class="divLine"></view> 
+                    <!-- Case2 -->
+
+                    <view wx:for="{{PEB_data}}" wx:key="key">
+                        <view class="casestyle">{{item.value}}</view>
+                        <view wx:if = "{{PEB[index] == 1}}"> 
+                            <view class="weui-form-preview__value">是</view>
+                        </view>
+                        <view wx:else>
+                            <view class="weui-form-preview__value">否</view>
+                        </view>                       
+                    </view>
+
+                    <!-- 分割线 -->
+                    <view class="divLine"></view>
+                    <!-- Case3 -->
+                    <view wx:for="{{PEC_data}}" wx:key="key">
+                        <view class="casestyle">{{item.value}}</view>
+                        <view wx:if = "{{PEC[index] == 1}}"> 
+                            <view class="weui-form-preview__value">是</view>
+                        </view>
+                        <view wx:else>
+                            <view class="weui-form-preview__value">否</view>
+                        </view>                       
+                    </view>
+        
+                </view>
+
+            </view>    
+
+        </view>
+        <!------------------------------------------------------------------------------------------>
+        <!-- 分割线 -->
+        <view class="divLine"></view>
+        <!-- 病例图 -->
+        <view class="weui-form-preview">
+            
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">提供材料图</view>
+            </view>        
+            <view>
+            <block wx:for="{{PEImglist}}" wx:key="key">             
+                <view class="weui-uploader__file ">
+                        <image class="weui-uploader__img" src="{{item}}" data-index="{{index}}" bindtap="previewImage">
+                  </image>
+                </view>
+            </block>   
+            </view>        
+            
+        </view>
+
+        <!------------------------------------------------------------------------------------------>       
+    </view>
+</view>
+<!------------------------------------------------------------------------------------------>
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}">
+        <view class="modal-title">填写审核结果</view>
+            <view class="modal-content">
+                <view class="modal-input">
+                    <input placeholder-class="input-holder" type="text" maxlength="20" bindinput="inputChangeResult_1" class="input" placeholder="结果一："></input>
+                </view>
+                <view class="modal-input">
+                    <input placeholder-class="input-holder" type="text" maxlength="20" bindinput="inputChangeResult_2" class="input" placeholder="结果二:"></input>
+                </view>
+                <view class="modal-input">
+                    <input placeholder-class="input-holder" type="text" maxlength="20" bindinput="inputChangeResult_3" class="input" placeholder="结果三:"></input> 
+                </view>
+                <view class="modal-input">
+                    <input placeholder-class="input-holder" type="number" maxlength="20" bindinput="inputChangescheme_option" class="input" placeholder="批准方案(选填 1,2,3 数字)"></input>
+                </view>
+            </view>
+ 
+            <view class="modal-footer">
+                <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+                <view class="btn-confirm" bindtap="onConfirm" id="{{checkerdoctorid}}" data-status="confirm">确定</view>
+            </view>
+ 
+    </view>

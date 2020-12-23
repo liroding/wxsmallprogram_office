@@ -1,0 +1,71 @@
+<!--pages/idmessage/idmessage.wxml-->
+
+<view class="weui-cells__title">
+<text>个人基本信息采集 \n</text>
+
+</view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+<view > 
+      <view class="section">
+        <view class="section__title">姓名：</view>
+        <view class="weui-cell weui-cell_input">
+        <input class="weui-input" name="user" auto-focus="true"  placeholder="Input you name"/>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">性别：</view>
+        <view class="weui-cell weui-cell_input">
+        <checkbox-group name="checkbox">
+          <label><checkbox value="man"/>男</label>
+          <label><checkbox value="women"/>女</label>
+        </checkbox-group>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">年龄：</view>
+        <view class="weui-cell weui-cell_input">
+        <input class="weui-input" type="number" name="age" maxlength="2" placeholder="Input you age"/>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">所属单位/部门：</view>
+        <view class="weui-cell weui-cell_input">
+        <input class="weui-input" name="department"  placeholder="Input you department"/>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">联系方式：</view>
+        <view class="weui-cell weui-cell_input">
+        <input class="weui-input" type="number" maxlength="11" name="telephone"  placeholder="Input you telephone"/>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">其他：</view>
+        <view class="weui-cell weui-cell_input">
+        <textarea  style="height: 3em" placeholder="选填" />
+        </view>
+      </view>
+
+</view>
+
+
+      <view class="btn-area">
+        <button formType="submit">提交</button>
+        <button formType="reset">重置</button>
+      </view>
+
+</form>
+<!-- 页底 -->
+<view class="weui-footer">
+    <view class="weui-footer__links">
+        <navigator url="" class="weui-footer__link">智能信息采集系统</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © dyl</view>
+</view>

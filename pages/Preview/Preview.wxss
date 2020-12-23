@@ -1,0 +1,5 @@
+/* pages/Preview/Preview.wxss */
+@import '/lib/weui.wxss'
+.weui-form-preview{
+    margin-bottom: 25px;
+}

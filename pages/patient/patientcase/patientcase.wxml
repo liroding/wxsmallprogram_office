@@ -1,0 +1,200 @@
+<!--pages/patientcase/patientcase.wxml-->
+<text>pages/patientcase/patientcase.wxml</text>
+<view class="weui-cells__title">
+<text>办公用具采购\n</text>
+</view>
+<view class="">
+<text>请选择采购用具\n\n</text>
+</view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+<view > 
+      <view class="section">
+        <view class="section__title">1. 笔记本</view>
+        <view class="weui-cell weui-cell_input">
+        <checkbox-group bindchange="_bindPEA">
+            <label class="checkbox" wx:for="{{PEA}}" wx:key="key">
+                <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                <view></view>
+            </label>
+        </checkbox-group>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">2. 笔</view>
+        <view class="weui-cell weui-cell_input">
+          <view class="section section_gap">
+          <!--
+          <radio-group class="group" bindchange="_bindPEB">
+              <view class="label-2" wx:for="{{PEB}}" wx:key="key">
+                     <radio id="{{item.name}}" hidden value="{{item.name}}" checked="{      {item.checked}}">
+                     </radio>
+
+                     <view class="label-1__icon">
+                        <view class="label-2__icon-checked" style="opacity:{{item.checked ? 1: 0}}"></view>
+                     </view>
+
+                     <label class="label-2__text" for="{{item.name}}">
+                         <text>{{item.value}}</text>
+                     </label>
+              </view>
+          </radio-group>
+          -->
+          <radio-group class="radio-group" bindchange="_bindPEB">
+              <label class="radio" wx:for="{{PEB}}" wx:key="key">
+                <view >
+                  <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                </view>
+              </label>
+          </radio-group>
+
+        </view>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">3. 其他</view>
+        <view class="weui-cell weui-cell_input">
+          <checkbox-group bindchange="_bindPEC">
+            <label class="checkbox" wx:for="{{PEC}}" wx:key="key">
+                <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                        <view wx:if="{{item.name == 'PEC-10'}}">
+                              <input class="weui-input" placeholder-style="color:#F76260" name="other"  placeholder="选填说明"/>
+                        </view>      
+                        <view wx:elif="{{item.name == 'PEC-11'}}">
+                              <input class="weui-input" placeholder-style="color:#F76260" name="other"  placeholder="选填说明"/>
+                        </view>        
+                <view></view>
+            </label>
+          </checkbox-group>
+        </view>
+
+        <view class="weui-uploader">
+          <view class="weui-uploader__hd weui-cell">
+              <view class="weui-uploader__title"></view>
+          </view>
+          <view class="weui-uploader__bd weui-cell block ">
+              <block wx:for="{{caseimagesList}}" wx:key="key">             
+              <view class="weui-uploader__file ">
+                  <image class="weui-uploader__img" src="{{item}}" data-index="{{index}}" bindtap=
+                   "previewImage">
+                  </image>
+              </view>
+              </block>
+
+              <view class="weui-uploader__input-box">
+                  <input class="weui-uploader__input js_file" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="" bindtap='selectcaseimg' name="images"></input>                 
+              </view>
+          </view>
+        </view>
+      </view> 
+<!--
+      <view class="section">
+        <view class="section__title">4. 力学评估</view>
+        <view class="weui-cell weui-cell_input">
+        <checkbox-group bindchange="_bindPED">
+            <label class="checkbox" wx:for="{{PED}}" wx:key="key">
+                <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                <view></view>
+            </label>
+        </checkbox-group>
+        </view>
+      </view>
+-->
+
+<!--
+        <view class="weui-uploader">
+          <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">X线---正位</view>
+          </view>
+          <view class="weui-uploader__bd">
+              <block wx:for="{{imagesList}}" wx:key="*this" >
+              <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="{{item}}"></image>
+              </view>
+              </block>
+              <view class="weui-uploader__input-box">
+                  <input class="weui-uploader__input js_file" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="" bindtap='uploader' name="images"></input>                 
+              </view>
+          </view>
+
+          <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">X线---侧位</view>
+          </view>
+          <view class="weui-uploader__bd">
+              <block wx:for="{{imagesList}}" wx:key="*this" >
+              <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="{{item}}"></image>
+              </view>
+              </block>
+              <view class="weui-uploader__input-box">
+                  <input class="weui-uploader__input js_file" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="" bindtap='uploader' name="images"></input>
+              </view>
+          </view>
+        </view>
+
+-->
+
+
+
+<!--
+      <view class="section">
+        <view class="section__title">3. 选择</view>
+        <view class="weui-cell weui-cell_input">
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="picker">
+                 当前选择：{{array[index]}}
+              </view>
+              </picker>
+        </view>
+      </view>
+
+
+      <view class="section">
+        <view class="section__title">4. 多选择</view>
+        <view class="weui-cell weui-cell_input">
+                  <picker mode="multiSelector" bindchange="bindMultiPickerChange"       bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                        <view class="picker">当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+                        </view>
+                  </picker>
+        </view>
+      </view>
+-->
+      <view class="section">
+        <view class="section__title">5. 其他：</view>
+        <view class="weui-cell weui-cell_input">
+        <input class="weui-input" name="other"  placeholder="option"/>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section__title">6. 提交材料 </view>
+        <view class="weui-cell weui-cell_input">
+              <view>   
+                  <image class="imgbtn" style="width: 600rpx; height: 300rpx; background-color: #eeeeee;"  src="{{img}}"></image>
+                  
+                  <button class="btn" type="warn" size="mini" bindtap="chooseimage" >选择图片</button>
+              </view>
+              
+              <view>
+                  
+              </view> 
+              
+        </view>
+      </view>
+
+
+</view>
+
+      <view class="btn-area">
+        <button formType="submit">提交</button>
+        <button formType="reset">重置</button>
+      </view>
+
+</form>
+
+
+
+

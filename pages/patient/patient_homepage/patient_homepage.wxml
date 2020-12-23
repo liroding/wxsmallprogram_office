@@ -1,0 +1,133 @@
+<!--pages/index_bakcup/index.wxml-->
+<!--
+<text>pages/index/index.wxml</text>
+-->
+
+<view class="page-section page-section-spacing swiper">
+      <swiper
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}rpx" next-margin="{{nextMargin}}rpx">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item >
+            <image src="{{item}}" class="slide-image"  style="height :100%;width:100%;"/>
+          </swiper-item>
+        </block>
+      </swiper>
+</view>
+
+<view class="weui-flex section">
+    <view>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    </view>
+    
+  <view class="weui-flex__item"></view>
+        <view class="weui-flex__item ">
+                <view class="value ">昵称</view>
+                <view class="caption">{{userInfo.nickName}}</view>
+        </view>
+</view>
+
+
+<view>
+   <text>\n</text>
+</view>
+
+<view class="page">
+ <view  class="page__bd">
+    <view class="weui-grids">
+      <navigator  url="/pages/idmessage/idmessage" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/resources/office_pic/patient_homepage_1.png" />
+        <view class="weui-grid__label">个人信息登记</view>
+      </navigator>
+
+      <navigator  url="/pages/patient/patientcase/patientcase" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/resources/office_pic/patient_homepage_2.jpg" />
+        <view class="weui-grid__label">办公用具采购</view>
+      </navigator>
+<!--
+      <navigator url="/pages/Preview/Preview" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/resources/index_bakcup/3.jpg" />
+        <view class="weui-grid__label" bindtap='Preview_message'>表单确认</view>
+      </navigator>
+
+
+      <view wx:if="{{userInfo.nickName == 'ding-丁'}}">
+      <navigator url="/pages/doctor/doctor" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/resources/index_bakcup/4.jpg" />
+        <view class="weui-grid__label" >医师诊断</view>
+      </navigator>
+      </view>
+    
+      <view wx:elif="{{userInfo.nickName == '孙玮'}}">
+      <navigator url="/pages/doctor/doctor" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/resources/index_bakcup/4.jpg" />
+        <view class="weui-grid__label" >医师诊断</view>
+      </navigator>
+      </view>
+     
+-->
+      <navigator url="/pages/patient/patient_treatment/patient_treatment" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/resources/office_pic/patient_homepage_3.jpg" />
+        <view class="weui-grid__label" >采购状态</view>
+      </navigator>
+
+<!--
+      <navigator url="/pages/testpage/test" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/resources/index_bakcup/6.jpg" />
+        <view class="weui-grid__label" >运动方案</view>
+      </navigator>
+
+
+
+
+      <view wx:if="{{userInfo.nickName == 'ding-丁'}}">
+      <navigator open-type="redirect" url=" " class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/resources/index_bakcup/upload.jpg" />
+        <view class="weui-grid__label" bindtap='download_message'>表格下载</view>
+      </navigator>
+      </view>
+
+-->
+
+      <navigator url="/pages/feedbackpage/feedback/feedback" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/resources/index_bakcup/4.jpg" />
+        <view class="weui-grid__label" >意见反馈</view>
+      </navigator>
+
+      
+      <navigator url="/pages/logs/logs" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/resources/index_bakcup/9.png" />
+        <view class="weui-grid__label">登录状态</view>
+      </navigator>
+
+      <!--
+      <navigator url="../introducearticle/introducearticle" class="weui-grid" hover-class="weui-grid_active">
+        <image class="weui-grid__icon" src="/resources/index_bakcup/6.jpg" />
+        <view class="weui-grid__label" >系统简介</view>
+      </navigator>
+      -->
+
+    </view>
+  </view>
+
+</view>
+
+
+<view>
+   <text>\n</text>
+   <text>\n</text>
+   <text>\n</text>
+
+</view>
+
+<!-- 页底 -->
+<view class="weui-footer">
+    <view class="weui-footer__links">
+        <navigator url="" class="weui-footer__link">智能信息采集系统</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © dyl</view>
+</view>
+
+
+
+

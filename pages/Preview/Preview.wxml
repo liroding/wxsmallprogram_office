@@ -1,0 +1,66 @@
+<!--pages/Preview/Preview.wxml-->
+<text>pages/Preview/Preview.wxml</text>
+
+
+<view class="page">
+    <view class="page__hd">
+        <view class="page__desc">提交表单预览</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">个人基本信息</view>
+                  
+                    <image  class="weui-grid__icon" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">姓名</view>
+                    <view class="weui-form-preview__value">{{name}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">性别</view>
+                    <view class="weui-form-preview__value">{{sex}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">年龄</view>
+                    <view class="weui-form-preview__value">{{age}}</view>
+                </view>
+
+
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">所属单位/部门</view>
+                    <view class="weui-form-preview__value">{{department}}</view>
+                </view>
+
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">联系方式</view>
+                    <view class="weui-form-preview__value">{{telephone}}</view>
+                </view>
+
+            </view>
+            <view class="weui-form-preview__ft">
+                <navigator url="../idmessage/idmessage" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">重新填写</navigator>
+            </view>
+        </view>
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">健康诊断表</view>
+                
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">是否检查过</view>
+                    <view class="weui-form-preview__value">是</view>
+                </view>
+
+            </view>
+            <view class="weui-form-preview__ft">
+                <navigator class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">辅助操作</navigator>
+                <navigator url="../patientcase/patientcase" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">操作</navigator>
+            </view>
+        </view>
+    </view>
+</view>

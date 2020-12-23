@@ -1,0 +1,37 @@
+<!--pages/index/index.wxml-->
+
+<view class="container">
+  <image src='/resources/index_bakcup/pic1.jpg'></image>
+
+  <button class='btn1' bindtap="_bt1jumppage">
+      <!-- 
+      <image class='btnImg' src='/resources/index_bakcup/2.png'></image>
+      -->
+      <view>我要注册</view>
+   </button>
+   
+    <button class='btn2' bindtap="_bt2jumppage">
+      <!-- 
+      <image class='btnImg' src='/resources/index_bakcup/2.png'></image>
+      -->
+      <view>我已注册</view>
+   </button>
+   
+
+</view>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+<!--pages/download/download.wxml-->
+<text>pages/download/download.wxml</text>
+
+<view>
+    <view class="section">
+        <view class="section__title">点击下载信息按钮，获取数据</view>
+        <view class="weui-cell weui-cell_input">
+        <button type="warn" size="mini" bindtap="download_botton" plain="{{plain}}"> 下载信息 </button>
+        </view>
+    </view>
+</view>
+

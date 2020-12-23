@@ -1,0 +1,116 @@
+<!--pages/login/login.wxml-->
+<text>pages/login/login.wxml</text>
+
+<!--
+<view class="container">
+  <view class="userinfo">
+    <button class='bottom' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo"       bindgetuserinfo="bindGetUserInfo" type='primary'> 授权登陆 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"  mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
+
+-->
+
+
+<view class="page-section page-section-spacing swiper">
+      <swiper
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}rpx" next-margin="{{nextMargin}}rpx">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item >
+            <image src="{{item}}" class="slide-image"  style="height :100%;width:100%;"/>
+          </swiper-item>
+        </block>
+      </swiper>
+</view>
+
+
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+            </view>
+
+
+          <view class="weui-tab__panel">
+            
+              <view class="weui-panel weui-panel_access">
+                      <view class="weui-cell">
+                          <text class="text_h2_green">为了让您的账户更安全，请设置联系方式</text>
+                      </view> 
+              </view>
+
+
+           <view class="weui-panel " hidden="{{activeIndex != 0}}"> 
+                  <view class="userinfo">
+                      <button class='weui_btn weui_btn_disabled weui_btn_primary' wx:if="{{!hasUserInfo && canIUse}}"   open-type="getUserInfo"       bindgetuserinfo="bindGetUserInfo" type='primary'> 授权登陆 </button>
+                  </view>
+          
+          </view>
+
+          <!--  编号验证 begin-->
+          <view class="weui-panel " hidden="{{activeIndex != 1}}">                      
+              <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <label class="weui-label">编号：</label>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入编号"/>
+                </view>
+            </view>
+          </view>
+
+          <view class="weui-panel " hidden="{{activeIndex != 1}}"> 
+                  <view class="userinfo">
+                      <button class='weui_btn weui_btn_disabled weui_btn_primary' wx:if="{{!hasUserInfo && canIUse}}"   open-type="getUserInfo"       bindgetuserinfo="bindGetUserInfo" type='primary'> 授权登陆 </button>
+                  </view>
+          
+          </view>
+          <!--  编号验证 end-->
+
+          <view class="weui-panel weui-panel_access">
+              <checkbox-group bindchange="_bindlogin">
+                 <label class="checkbox" wx:for="{{items}}" wx:key="key">
+                     <checkbox value="{{item.name}}" checked=""/>{{item.value}}
+ 
+                      <view class="weui-cell">
+                          <text class="text_h1_red">如果您是游客或者是普通用户，选择微信授权，直接登陆使用。如果您属于特殊指定群体用户，请选择编号验证的方式，登陆使用，同时请确保您编号的安全性。
+                          </text>
+                      </view> 
+                  </label>
+              </checkbox-group>
+          </view>
+
+
+
+        
+
+          </view>
+        </view>
+
+
+
+
+
+    </view>
+</view>
+
+
+
+<view class="weui-footer weui-footer_fixed-bottom">
+            <view class="weui-footer__links">
+                <navigator url="/index/index" class="weui-footer__link">首页</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © 2020-2021 liroding</view>
+</view>

@@ -1,0 +1,30 @@
+<!--pages/wxml/index.wxml-->
+
+<view>
+  <text>this is test xml \n</text>
+  <text>当前时间：{{time}} \n</text>
+  <text>               此功能正在完善中 ......</text>
+</view>
+<!-- botton -->
+
+<!--
+<view>
+<button type="warn" size="mini" bindtap="botton_1" plain="{{plain}}"> botton_1 </button>
+<button type="primary" size="mini" bindtap="botton_2" plain="{{plain}}"> botton_1 </button>
+
+<button type="primary" size="mini" bindtap="testSubmit" plain="{{plain}}"> 发送订阅消息 </button>
+</view>
+-->
+ 
+
+
+
+
+
+
+
+
+
+
+
+

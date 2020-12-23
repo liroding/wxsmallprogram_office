@@ -1,0 +1,12 @@
+<!--pages/feedbackpage/idmesg/idmesg.wxml-->
+<text>pages/feedbackpage/idmesg/idmesg.wxml</text>
+<view>
+  <view class="section">
+      <text>{{info}}</text>
+  </view>
+  <view class="btn-area section">
+      <navigator open-type="redirect" url="/pages/index/index" hover-class="navigator-hover">回首页</navigator>
+  </view>
+</view>
+
+

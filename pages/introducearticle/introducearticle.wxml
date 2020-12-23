@@ -1,0 +1,33 @@
+<!--pages/introducearticle/introducearticle.wxml-->
+<text>pages/introducearticle/introducearticle.wxml</text>
+
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">信息采集数据分析系统</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">介绍</view>
+            <view class="weui-article__section">
+                <view class="weui-article__h2">功能</view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.1 数据采集</view>
+                    <view class="weui-article__p">
+                        这是一个数据采集系统
+                    </view>
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="/resources/index_bakcup/1.png" mode="aspectFit" style="height: 180px" />
+
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.2 数据分析</view>
+                    <view class="weui-article__p">
+                        通过分析数据，给出分析结果
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

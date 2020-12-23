@@ -1,0 +1,18 @@
+/* pages/feedbackpage/idmesg/idmesg.wxss */
+
+@import '/lib/weui.wxss'
+/** wxss **/
+/** 修改默认的navigator点击态 **/
+.navigator-hover {
+    color:blue;
+}
+/** 自定义其他点击态样式类 **/
+.other-navigator-hover {
+    color:red;
+}
+.section{
+  width: 95%;
+  height:100%;
+  margin:8px;
+  background-color:white;
+}

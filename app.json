@@ -1,0 +1,46 @@
+{
+  "pages": [
+
+    "pages/index/index",
+
+    "pages/login/login",
+
+
+    "pages/doctor/doctor_handle/doctor_handle",
+
+
+    "pages/idmessage/idmessage",
+
+    "pages/patient/patient_homepage/patient_homepage",
+    "pages/patient/patientcase/patientcase",
+    "pages/patient/patient_treatment/patient_treatment",
+
+    "pages/doctor/doctor_homepage/doctor_homepage",
+
+    "pages/introducearticle/introducearticle",
+
+    "pages/testpage/test",
+
+    "pages/download/download",
+    
+    "pages/logs/logs",
+    "pages/feedbackpage/idmesg/idmesg",
+    "pages/feedbackpage/patientcase/patientcase",
+    "pages/feedbackpage/feedback/feedback",
+
+    "pages/Preview/Preview",
+    "pages/passwordbox/passwordbox",
+    "pages/userselection/userselection"
+
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "精准达系统",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

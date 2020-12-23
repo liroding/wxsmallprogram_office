@@ -1,0 +1,10 @@
+<!--pages/feedbackpage/feedback/feedback.wxml-->
+<text>pages/feedbackpage/feedback/feedback.wxml</text>
+<view>
+    <view class="section">
+        <view class="section__title">点击意见反馈按钮，将您使用中遇到的问题进行反馈，谢谢~</view>
+        <view class="weui-cell weui-cell_input">
+        <button type="warn" size="mini" open-type='feedback'>意见反馈</button>
+        </view>
+    </view>
+</view>
