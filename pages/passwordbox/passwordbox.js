@@ -42,6 +42,7 @@ hidePayLayer: function(){
             console.log('[liro-debug] password fail')
             wx.showToast({
               title: '错误',
+              icon: 'error',
               duration: 10000//持续的时间
             })
             wx.navigateTo({
