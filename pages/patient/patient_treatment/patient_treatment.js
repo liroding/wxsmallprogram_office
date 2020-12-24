@@ -25,7 +25,7 @@ Page({
          },
          success: function (res) {
              console.log(res.data)
-             wx.hideLoading()
+             //wx.hideLoading()
              if (res.data == 'has not be checked'){
               wx.showToast({
                 title: '无新数据可查！' ,  
