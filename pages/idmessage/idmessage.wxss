@@ -16,3 +16,11 @@
   margin:12px;
   background-color:white;
 }
+.input-radius{
+  border-radius: 15px;
+  margin: 0 0 3px 18px;
+  width: 270px;
+  height: 2.8rem;
+  min-height: 2.8rem;
+  font-size: 35rpx;
+}
