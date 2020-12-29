@@ -5,13 +5,13 @@
 
 </view>
 
-<form bindsubmit="formSubmit" bindreset="formReset">
+<form bindsubmit="formSubmit" >
 
 <view > 
       <view class="section">
         <view class="section__title">姓名：</view>
         <view class="weui-cell weui-cell_input">
-        <input class="input-radius" name="user" auto-focus="true"  placeholder="Input you name"/>
+        <input class="input-radius" value="{{name}}" name="user" auto-focus="true"  placeholder="Input you name"/>
         </view>
       </view>
 
@@ -19,8 +19,8 @@
         <view class="section__title">性别：</view>
         <view class="weui-cell weui-cell_input">
         <checkbox-group class="input-radius" name="checkbox">
-          <label><checkbox value="man"/>男</label>
-          <label><checkbox value="women"/>女</label>
+          <label><checkbox value="man" checked = "{{sex}}"/>男</label>
+          <label><checkbox value="women" checked = "{{_sex}}"/>女</label>
         </checkbox-group>
         </view>
       </view>
@@ -28,21 +28,21 @@
       <view class="section">
         <view class="section__title">年龄：</view>
         <view class="weui-cell weui-cell_input">
-        <input class="input-radius" type="number" name="age" maxlength="2" placeholder="Input you age"/>
+        <input class="input-radius" type="number" value="{{age}}" name="age" maxlength="2" placeholder="Input you age"/>
         </view>
       </view>
 
       <view class="section">
         <view class="section__title">所属单位/部门：</view>
         <view class="weui-cell weui-cell_input">
-        <input class="input-radius" name="department"  placeholder="Input you department"/>
+        <input class="input-radius" value="{{department}}" name="department"  placeholder="Input you department"/>
         </view>
       </view>
 
       <view class="section">
         <view class="section__title">联系方式：</view>
         <view class="weui-cell weui-cell_input">
-        <input class="input-radius" type="number" maxlength="11" name="telephone"  placeholder="Input you telephone"/>
+        <input class="input-radius" type="number" maxlength="11" value="{{telephone}}" name="telephone"  placeholder="Input you telephone"/>
         </view>
       </view>
 
@@ -58,7 +58,7 @@
 
       <view class="btn-area">
         <button formType="submit">提交</button>
-        <button formType="reset">重置</button>
+        <button bindtap="next" >下一项</button>
       </view>
 
 </form>

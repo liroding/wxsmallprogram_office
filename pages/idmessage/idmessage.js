@@ -10,6 +10,16 @@ Page({
    */
   data: {
     authsession:null,
+    reqid:null,
+
+    //idmessage
+    name: null,
+    sex: null,
+    _sex:null,
+    age: null,
+    department: null,
+    telephone : null,
+ 
   },
 
   formSubmit: function (e) {
@@ -94,8 +104,15 @@ Page({
 
 
   },
-  formReset: function () {
+  next: function () {
     console.log('form发生了reset事件')
+    wx.reLaunch({
+      url: '/pages/patient/patientcase/patientcase',
+      success: function (res) {
+        // 通过eventChannel向被打开页面传送数据
+        console.log('[liro-debug]: navigate to feedback page')
+      }
+    })
   },
 
 
@@ -114,14 +131,65 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    console.log("[liro-debug]: idmessage onReady")
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    //console.log(app.globalData.userInfo.nickName)
+  onShow: function (e) {
+    //var detail = e.user.value.user;
+    console.log("[liro-debug]: idmessage onshow")
+    var mythis = this
+    mythis.setData({
+        reqid:4
+    });
+    wx.request({
+      url: 'https://dingyinglai.site/wxapp/querymysqldb',
+      method: "POST",
+      data: {
+        "reqid": mythis.data.reqid,    //get idmessage information  id = 4
+        "authsession": app.globalData.authsession,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // post ,it is different get!!!!
+      },
+      success: function (res) {
+        console.log(res.data)
+        wx.hideLoading()
+        if( res.data.sex == 'man'){
+          mythis.setData({
+            sex: true,
+            _sex: false,
+          })
+        }
+        if( res.data.sex == 'women'){
+          mythis.setData({
+            _sex: true,
+            sex: false,
+          })
+        }
+        
+        mythis.setData({
+          name:res.data.name,
+          age: res.data.age,
+          department: res.data.department,
+          telephone : res.data.telephone,
+        });
+        /*
+        wx.redirectTo({
+          url: '/pages/feedbackpage/idmesg/idmesg?info=' + res.data,
+          success: function (res) {
+            // 通过eventChannel向被打开页面传送数据
+            console.log('[liro-debug]: navigate to idmesg feedback page')
+          }
+        })
+        */
+      }
+      
+
+    })
+
   },
 
   /**
